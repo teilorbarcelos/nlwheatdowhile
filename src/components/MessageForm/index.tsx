@@ -16,7 +16,7 @@ export function MessageForm() {
       return
     }
 
-    await api.post('/messageCreate', { message })
+    await api.post('/messageCreate', { text: message })
 
     setMessage('')
   }
