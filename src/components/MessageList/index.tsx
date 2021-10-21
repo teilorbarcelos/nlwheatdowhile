@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import logoImg from '../../assets/logo.svg'
 import { useEffect, useState } from 'react'
 import { api } from '../../services/api'
+import { io } from 'socket.io-client'
 
 interface IUser {
   avatar_url: string
@@ -15,8 +16,30 @@ interface IMessage {
   user: IUser
 }
 
+const messagesQueue: IMessage[] = []
+
+const socket = io('https://impulsenode.herokuapp.com')
+
+socket.on('new_message', (newMessage: IMessage) => {
+  messagesQueue.push(newMessage)
+})
+
 export function MessageList() {
   const [messages, setMessages] = useState<IMessage[]>([])
+  const [lastMessage, setLastMessage] = useState<IMessage>({} as IMessage)
+
+  useEffect(() => {
+    setInterval(() => {
+      if (messagesQueue.length > 0) {
+        setMessages(prevState => [
+          messagesQueue[0],
+          prevState[0],
+          prevState[1]
+        ].filter(Boolean))
+        messagesQueue.shift()
+      }
+    }, 3000)
+  }, [])
 
   useEffect(() => {
     api.get('/getLast3Messages').then(response => {
