@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { VscGithubInverted } from 'react-icons/vsc'
 import { AuthContext } from '../../contexts/authContext'
+import Footer from '../Footer'
 import styles from './styles.module.scss'
 
 export default function LoginBox() {
@@ -13,6 +14,8 @@ export default function LoginBox() {
         <VscGithubInverted size={24} />
         Entrar com Github
       </a>
+
+      <Footer />
     </div>
   )
 }

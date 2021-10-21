@@ -2,6 +2,7 @@ import { FormEvent, useContext, useState } from 'react'
 import { VscGithubInverted, VscSignOut } from 'react-icons/vsc'
 import { AuthContext } from '../../contexts/authContext'
 import { api } from '../../services/api'
+import Footer from '../Footer'
 import styles from './styles.module.scss'
 
 export function MessageForm() {
@@ -52,6 +53,8 @@ export function MessageForm() {
         />
         <button type="submit">Enviar mensagem</button>
       </form>
+
+      <Footer />
     </div>
   )
 }
