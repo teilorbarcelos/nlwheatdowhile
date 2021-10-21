@@ -1,4 +1,4 @@
-import { Children, createContext, ReactNode, useEffect, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
 import { api } from "../services/api"
 
 interface GithubUser {
@@ -35,7 +35,7 @@ export const AuthContext = createContext({} as AuthContextData)
 export function AuthProvider(props: AuthProvider) {
   const [user, setUser] = useState<User | null>(null)
 
-  const signInUrl = 'https://github.com/login/oauth/authorize?scope=user&client_id=9cdc9e8baf1392bf31d8'
+  const signInUrl = import.meta.env.VITE_SIGNIN_URL as string
 
   async function signIn(githubCode: string) {
     const response = await api.post<AuthResponse>('/authenticate', {
