@@ -2,4 +2,13 @@
   padding-top: 1rem;
   bottom: 0;
   width: 100%;
+
+  a {
+    color: #ffcd1e;
+    text-decoration: none;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
 }
