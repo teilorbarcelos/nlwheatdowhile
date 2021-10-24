@@ -8,6 +8,10 @@
   > img {
     height: 28px;
     margin: 32px 0;
+    @media screen and (max-width: 640px) {
+      height: 14px;
+      margin: 1.55rem 1rem;
+    }
   }
 }
 
@@ -21,10 +25,6 @@
 
   .message {
     max-width: 440px;
-
-    &:nth-child(2) {
-      margin-left: 80px;
-    }
 
     .messageContent {
       font-size: 20px;
@@ -55,6 +55,20 @@
         font-size: 16px;
         margin-left: 12px;
       }
+    }
+
+    @media screen and (min-width: 640px) {
+      &:nth-child(2) {
+        margin-left: 80px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 639px) {
+    margin: 0 1rem 10rem;
+
+    &.loggedUser {
+      margin: 0 1rem 15rem;
     }
   }
 }

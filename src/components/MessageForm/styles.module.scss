@@ -9,6 +9,17 @@
   text-align: center;
 
   position: relative;
+
+  @media screen and (max-width: 639px) {
+    position: fixed;
+    bottom: 0;
+    padding: 0 0 1rem;
+    width: 100%;
+    > button,
+    .userInformation {
+      display: none;
+    }
+  }
 }
 
 .signOutButton {
@@ -119,6 +130,30 @@
 
     &:hover {
       filter: brightness(0.9);
+    }
+  }
+
+  @media screen and (max-width: 639px) {
+    margin-top: 0;
+
+    label {
+      padding: 0.5rem 1rem;
+      font-size: 20px;
+      background: #29292e;
+      font-weight: normal;
+      text-align: left;
+    }
+
+    textarea {
+      padding: 0.5rem;
+      height: 5rem;
+    }
+
+    button {
+      border: 0;
+      margin: 0.5rem;
+      padding: 0 1rem;
+      height: 2rem;
     }
   }
 }

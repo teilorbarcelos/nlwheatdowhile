@@ -1,9 +1,10 @@
 import styles from './styles.module.scss'
 
 import logoImg from '../../assets/logo.svg'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { api } from '../../services/api'
 import { io } from 'socket.io-client'
+import { AuthContext } from '../../contexts/authContext'
 
 interface IUser {
   avatar_url: string
@@ -26,7 +27,7 @@ socket.on('new_message', (newMessage: IMessage) => {
 
 export function MessageList() {
   const [messages, setMessages] = useState<IMessage[]>([])
-  const [lastMessage, setLastMessage] = useState<IMessage>({} as IMessage)
+  const { user } = useContext(AuthContext)
 
   useEffect(() => {
     setInterval(() => {
@@ -51,7 +52,9 @@ export function MessageList() {
     <div className={styles.messageListWrapper}>
       <img src={logoImg} alt="DoWhile 2021 image" />
 
-      <ul className={styles.messageList}>
+
+
+      <ul className={`${styles.messageList} ${user && styles.loggedUser}`}>
 
         {
           messages?.map(message => {

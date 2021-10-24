@@ -3,6 +3,7 @@ import { VscGithubInverted, VscSignOut } from 'react-icons/vsc'
 import { AuthContext } from '../../contexts/authContext'
 import { api } from '../../services/api'
 import Footer from '../Footer'
+import Header from '../Header'
 import styles from './styles.module.scss'
 
 export function MessageForm() {
@@ -31,7 +32,9 @@ export function MessageForm() {
         <VscSignOut size={32} />
       </button>
 
-      <header className={styles.userInformation}>
+      <Header />
+
+      {/* <header className={styles.userInformation}>
         <div className={styles.userImg}>
           <img src={user?.avatar_url} alt={`Avatar from user ${user?.name}`} />
         </div>
@@ -40,7 +43,7 @@ export function MessageForm() {
           <VscGithubInverted size={16} />
           {user?.login}
         </span>
-      </header>
+      </header> */}
 
       <form onSubmit={sendMessage} className={styles.messageForm}>
         <label htmlFor="message">Mensagem</label>
