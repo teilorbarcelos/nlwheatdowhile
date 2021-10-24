@@ -34,17 +34,6 @@ export function MessageForm() {
 
       <Header />
 
-      {/* <header className={styles.userInformation}>
-        <div className={styles.userImg}>
-          <img src={user?.avatar_url} alt={`Avatar from user ${user?.name}`} />
-        </div>
-        <strong className={styles.userName}>{user?.name}</strong>
-        <span className={styles.userGithub}>
-          <VscGithubInverted size={16} />
-          {user?.login}
-        </span>
-      </header> */}
-
       <form onSubmit={sendMessage} className={styles.messageForm}>
         <label htmlFor="message">Mensagem</label>
         <textarea

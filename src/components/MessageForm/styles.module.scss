@@ -21,21 +21,21 @@
   }
 }
 
-// .signOutButton {
-//   background: transparent;
-//   border: 0;
-//   color: #c4c4cc;
+.signOutButton {
+  background: transparent;
+  border: 0;
+  color: #c4c4cc;
 
-//   position: absolute;
-//   left: 24px;
-//   top: 24px;
+  position: absolute;
+  left: 24px;
+  top: 24px;
 
-//   cursor: pointer;
+  cursor: pointer;
 
-//   &:hover {
-//     filter: brightness(0.9);
-//   }
-// }
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
 
 // .userInformation {
 //   display: flex;
