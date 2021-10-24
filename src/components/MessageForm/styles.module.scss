@@ -15,65 +15,64 @@
     bottom: 0;
     padding: 0 0 1rem;
     width: 100%;
-    > button,
-    .userInformation {
+    > button {
       display: none;
     }
   }
 }
 
-.signOutButton {
-  background: transparent;
-  border: 0;
-  color: #c4c4cc;
+// .signOutButton {
+//   background: transparent;
+//   border: 0;
+//   color: #c4c4cc;
 
-  position: absolute;
-  left: 24px;
-  top: 24px;
+//   position: absolute;
+//   left: 24px;
+//   top: 24px;
 
-  cursor: pointer;
+//   cursor: pointer;
 
-  &:hover {
-    filter: brightness(0.9);
-  }
-}
+//   &:hover {
+//     filter: brightness(0.9);
+//   }
+// }
 
-.userInformation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+// .userInformation {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
 
-  .userImg {
-    padding: 3px;
-    background: linear-gradient(100deg, #ff008e 0%, #ffcd1e 100%);
-    border-radius: 50%;
-    line-height: 0;
+//   .userImg {
+//     padding: 3px;
+//     background: linear-gradient(100deg, #ff008e 0%, #ffcd1e 100%);
+//     border-radius: 50%;
+//     line-height: 0;
 
-    img {
-      width: 94px;
-      height: 94px;
-      border-radius: 50%;
+//     img {
+//       width: 94px;
+//       height: 94px;
+//       border-radius: 50%;
 
-      border: 3px solid #121214;
-    }
-  }
+//       border: 3px solid #121214;
+//     }
+//   }
 
-  .userName {
-    font-size: 24px;
-    line-height: 30px;
-    margin-top: 16px;
-  }
+//   .userName {
+//     font-size: 24px;
+//     line-height: 30px;
+//     margin-top: 16px;
+//   }
 
-  .userGithub {
-    display: flex;
-    align-items: center;
+//   .userGithub {
+//     display: flex;
+//     align-items: center;
 
-    margin-top: 8px;
-    color: #c4c4cc;
+//     margin-top: 8px;
+//     color: #c4c4cc;
 
-    gap: 8px;
-  }
-}
+//     gap: 8px;
+//   }
+// }
 
 .messageForm {
   display: flex;
